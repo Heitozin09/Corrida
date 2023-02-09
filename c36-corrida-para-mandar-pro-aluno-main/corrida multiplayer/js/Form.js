@@ -31,10 +31,15 @@ class Form {
   this.playButton.mousePressed(()=>{
     this.input.hide()
     this.playButton.hide()
+    playerCount+=1
     this.nick = this.input.value()===""?"player"+playerCount:this.input.value()
     var message = `Boas-Vindas,${this.nick}
     </br>Esperando o Proximo Jogador Entrar `
     this.greeting.html(message)
+    player.name=this.nick
+    player.index=playerCount
+    player.addPlayer()
+    player.updateCount(playerCount)
   })
  }
 
